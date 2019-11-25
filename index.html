@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="styles/styles.css" type="text/css">
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="styles/themes.css" type="text/css">
+
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/responsiveslides.min.js"></script>
+
+    <title>Afterlife</title>
+</head>
+
+<body>
+    <div class="mainWrapper">
+        <div class="logoWrapper">
+            <img src="images/logo.png" alt="Logo" />
+            <p>Stari uređaj, novi korisnik.</p>
+        </div>
+        <div class="menuWrapper">
+            <a href="index.html">Početna</a>
+            <a href="uredjaji.html">Uređaji</a>
+            <a href="onama.html">O nama</a>
+            <a href="poruci.html">Poruči</a>
+
+        </div>
+        <div class="contentWrapper">
+            <div class="index">
+                <h1>Potreban vam je pametan telefon?</h1>
+                <ul class="rslides" id="slajder">
+                    <li><img src="images/slider/1.jpg" alt=""></li>
+                    <li><img src="images/slider/2.jpg" alt=""></li>
+                    <li><img src="images/slider/3.jpg" alt=""></li>
+                </ul>
+            </div>
+            <script>
+                $(function () {
+                    $(".rslides").responsiveSlides();
+                    $(".rslides").responsiveSlides({
+                        speed: 1000
+                    });
+                });
+            </script>
+            <h2>Pronađi uređaj po tvom izboru.</h2>
+            <div class="org">
+                <img src="images/decije_srce.gif"/>
+                <img src="images/lukic.png"/>
+                <img src="images/nurdor.jpg"/>
+                <img src="images/sug.jpg"/>
+            </div>
+            <h2>Podrži humanitarne organizacije.</h2>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy;2019.
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="styles/styles.css" type="text/css">
+    <link rel="icon" href="images/favicon.png">
+
+    <title>Afterlife</title>
+
+    <script>
+        function resetForm() {
+            document.getElementById("donacija").selectedIndex = -1;
+        }
+
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var address = document.getElementById("address").value;
+            var city = document.getElementById("city").value;
+            var postal = document.getElementById("postal").value;
+            var choice = document.getElementById("donacija").selectedIndex;
+
+            if (name == "" || address == "" || city == "" || postal == "" || postal < 11000 || postal > 38267 || choice == -1) {
+                document.getElementById("message").innerHTML = "Pravilno popunite formu!";
+                return false;
+            }
+
+            return true;
+        }
+
+        window.onbeforeunload = function(event) {
+            var name = document.getElementById("name").value;
+            var address = document.getElementById("address").value;
+            var city = document.getElementById("city").value;
+            var postal = document.getElementById("postal").value;
+
+            if(name != "" || address != "" || city != "" || postal != "")
+                return "";
+            
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <div class="mainWrapper">
+        <div class="logoWrapper">
+            <img src="images/logo.png" alt="Logo" />
+            <p>Stari uređaj, novi korisnik.</p>
+        </div>
+        <div class="menuWrapper">
+            <a href="index.html">Početna</a>
+            <a href="uredjaji.html">Uređaji</a>
+            <a href="onama.html">O nama</a>
+            <a href="poruci.html">Poruči</a>
+
+        </div>
+        <div class="contentWrapper">
+            <h1>Poruči</h1>
+            <p style="text-indent: 0;">Trenutno podržavamo porudžbine samo na <br>
+                teritoriji Republike Srbije. <br><br>
+                Sva polja moraju biti ispunjena.</p>
+            <p id="message"></p>
+            <form onreset="resetForm();" onsubmit="return validateForm();" id="form">
+                <label>Odaberi uređaj: </label>
+                <select>
+                    <option>Samsung Galaxy S6</option>
+                    <option>LG V20</option>
+                    <option>Google Pixel XL</option>
+                </select>
+                <label>Odaberi organizaciju: </label>
+                <select id="donacija">
+                    <option>NURDOR</option>
+                    <option>Fondacija Lukić</option>
+                    <option>Srpsko udruženje gluvih</option>
+                    <option>Radost deci</option>
+                </select>
+                <script>
+                    resetForm();
+                </script>
+                <label class="labela">Ime i prezime: </label>
+                <input type="text" id="name">
+                <label>Adresa: </label>
+                <input type="text" id="address">
+                <label>Grad: </label>
+                <input type="text" id="city">
+                <label>Poštanski broj</label>
+                <input type="number" id="postal">
+                <div class="buttons">
+                    <input type="submit" value="POŠALJI">
+                    <input type="reset" value="PONIŠTI">
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy;2019.
+    </div>
+</body>
+
+</html>

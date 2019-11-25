@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="styles/styles.css" type="text/css">
+    <link rel="icon" href="images/favicon.png">
+
+    <title>Afterlife</title>
+
+    <script>
+        function calcDate() {
+            var t = document.getElementsByClassName("date");
+
+            for (var i = 0; i < t.length; i++) {
+                var text = t[i].innerHTML;
+                var d = text.split("/");
+
+                var old = Date.parse(d[2] + "-" + d[1] + "-" + d[0]);
+                var now = Date.now();
+
+                const diffTime = Math.abs(now - old);
+                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+                console.log(diffDays);
+
+                var word = "";
+                if (diffDays == 1)
+                    word = "dan";
+                else
+                    word = "dana";
+
+                t[i].innerHTML = text + " (pre " + diffDays + " " + word + ")";
+            }
+        }
+
+
+    </script>
+</head>
+
+<body onload="calcDate()">
+    <div class="mainWrapper">
+        <div class="logoWrapper">
+            <img src="images/logo.png" alt="Logo" />
+            <p>Stari uređaj, novi korisnik.</p>
+        </div>
+        <div class="menuWrapper">
+            <a href="index.html">Početna</a>
+            <a href="uredjaji.html">Uređaji</a>
+            <a href="onama.html">O nama</a>
+            <a href="poruci.html">Poruči</a>
+
+        </div>
+        <div class="contentWrapper">
+            <h1>Samsung Galaxy S6</h1>
+            <div class="deviceWrapper">
+
+                <section class="slika">
+                    <img src="images/telefoni/s6.png" />
+                </section>
+                <div>
+                    <section>
+                        <span>Procesor</span>
+                        <span>4 core @ 2.1GHz</span>
+                    </section>
+                    <section>
+                        <span>Memorija</span>
+                        <span>3GB RAM, 32GB interne memorije</span>
+                    </section>
+                    <section>
+                        <span>Kamera</span>
+                        <span>16Mpx zadnja, 5Mpx prednja</span>
+                    </section>
+                    <section>
+                        <span>Baterija</span>
+                        <span>2550mAh</span>
+                    </section>
+                    <section>
+                        <span>Doniran</span>
+                        <span class="date">20/11/2019</span>
+                    </section>
+                    <section>
+                        <span>Cena</span>
+                        <span>60€</span>
+                    </section>
+                </div>
+            </div>
+
+            <h1>LG V20</h1>
+            <div class="deviceWrapper">
+                <section class="slika">
+                    <img src="images/telefoni/lg.jpg" />
+                </section>
+                <div>
+                    <section>
+                        <span>Procesor</span>
+                        <span>2 core @ 2.35GHz</span>
+                    </section>
+                    <section>
+                        <span>Memorija</span>
+                        <span>4GB RAM, 64GB interne memorije</span>
+                    </section>
+                    <section>
+                        <span>Kamera</span>
+                        <span>16Mpx + 8Mpx zadnja, 5Mpx prednja</span>
+                    </section>
+                    <section>
+                        <span>Baterija</span>
+                        <span>3200mAh</span>
+                    </section>
+                    <section>
+                        <span>Doniran</span>
+                        <span class="date">19/11/2019</span>
+                    </section>
+                    <section>
+                        <span>Cena</span>
+                        <span>50€</span>
+                    </section>
+                </div>
+            </div>
+
+            <h1>Google Pixel XL</h1>
+            <div class="deviceWrapper">
+                <section class="slika">
+                    <img src="images/telefoni/xl.jpg" />
+                </section>
+                <div>
+                    <section>
+                        <span>Procesor</span>
+                        <span>2 core @ 2.35GHz</span>
+                    </section>
+                    <section>
+                        <span>Memorija</span>
+                        <span>4GB RAM, 32GB interne memorije</span>
+                    </section>
+                    <section>
+                        <span>Kamera</span>
+                        <span>12.3Mpx zadnja, 8Mpx prednja</span>
+                    </section>
+                    <section>
+                        <span>Baterija</span>
+                        <span>3450mAh</span>
+                    </section>
+                    <section>
+                        <span>Doniran</span>
+                        <span class="date">21/11/2019</span>
+                    </section>
+                    <section>
+                        <span>Cena</span>
+                        <span>80€</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy;2019.
+    </div>
+</body>
+
+</html>
